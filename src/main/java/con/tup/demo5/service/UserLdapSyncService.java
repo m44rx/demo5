@@ -10,5 +10,5 @@ public interface UserLdapSyncService {
     
     List<UserLdapSync> getUserxUserNameGroupName();
 
-    
+    UserLdapSync getListUserWithAccesss(String username);
 }

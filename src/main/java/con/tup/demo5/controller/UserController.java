@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import con.tup.demo5.entity.UserLdapSync;
@@ -30,5 +31,9 @@ public class UserController {
         return ResponseEntity.ok(service.getUserxUserName());
     }
 
+    @GetMapping("/third")
+    public ResponseEntity<UserLdapSync> getUserList(@RequestParam(required = false) String username){
+        return ResponseEntity.ok(service.getListUserWithAccesss(username));
+    }
 
 }
